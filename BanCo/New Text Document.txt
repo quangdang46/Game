@@ -1,0 +1,33 @@
+pos = [[-1,2],
+[-2,1],
+[-2,-1],
+[-1,-2],
+[1,-2],
+[2,-1],
+[2,1],
+[1,2]]
+
+K = input("Vị trí quân mã: ").lower()
+
+X = ord(K[0])
+Y = int(K[1])
+
+if 97 <= X <= 104 and 1 <= Y <= 8:
+    moves = input("Nước đi: ").upper()
+    for i in moves:
+        if i in "ABCDEFGH":
+            move = pos[ord(i) - 65]
+            X += move[0]
+            Y += move[1]
+        else:
+            X = 0
+            break
+
+    if 97 <= X <= 104 and 1 <= Y <= 8:  
+        print("Vị trí sau di chuyển: "+chr(X)+str(Y))
+    else:
+        print("Nước đi không hợp lệ")
+else:
+    print("Vị trí không hợp lệ")
+
+#A 65 H 72 a 97 h 104
